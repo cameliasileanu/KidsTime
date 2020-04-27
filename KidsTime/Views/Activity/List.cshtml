@@ -1,0 +1,8 @@
+﻿@model ActivityListViewModel
+
+<h1>@Model.CurrentCategory</h1>
+
+@foreach (var activity in Model.Activities)
+{
+    <partial name="_ActivityCard" model="activity"/>
+}

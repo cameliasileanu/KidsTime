@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    <link href="~/Content/site.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-inverse navbar-fixed-top text-center" role="navigation">
+            <div class="container">
+                <div class="navbar-header text-center">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <div class="navbar-header text-center">
+                        <a class="navbar-brand" href="#"><b>KidsTime Sibiu</b></a>
+                    </div>
+                    <ul class="nav navbar-nav text-left">
+                        @*<li><a asp-controller="Home" asp-action="Index">Acasa</a></li>*@
+                        @await Component.InvokeAsync("CategoryMenu")
+                        <li><a asp-controller="AfterSchool" asp-action="Index">Scoala dupa scoala</a></li>
+                        <li><a asp-controller="PrivateLessons" asp-action="Index">Medidatii</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="lead">
+                    @*<img class="img-logo" alt="" src="~/images/butterflies.png" />*@
+                    @*<div class="col-bg-primary text-center">
+                        <h4><b>KidsTime Sibiu</b> iti ofera posibilitatea sa alegi cele mai interesante activitati pentru copilul tau</h4>
+                    </div>*@
+                </div>
+                <div class="lead">
+                    <img class="img-logo" alt="" src="~/images/three-1325106.png" />
+                    <div class="col-bg-primary text-center">
+                        <h4><b>KidsTime Sibiu</b> - ca sa ai elan!</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</body>
+</html>

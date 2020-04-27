@@ -1,0 +1,14 @@
+﻿@model HomeViewModel
+
+<partial name="_Carousel"/>
+
+@*<h2>StarActivity</h2>
+<h4>Cele mai cautate activitati</h4>*@
+
+<div class="row">
+
+    @foreach (var activity in Model.IsActivityStar)
+    {
+        <partial name="_ActivityCard" model="activity"/>
+    }
+</div>
